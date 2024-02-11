@@ -1,0 +1,97 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(to bottom, #8e44ad, #c0392b);
+    /* Purple gradient background */
+}
+
+#header-image {
+    width: 250px;
+    /* Set a fixed width */
+    height: 250px;
+    /* Set a fixed height */
+    margin-bottom: 20px;
+    /* Adjust spacing as needed */
+    opacity: 0;
+    animation: fadeInFromLeft 1.5s forwards;
+}
+
+@keyframes fadeInFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+#wrapper {
+    width: 80%;
+    max-width: 450px;
+    height: 80vw;
+    max-height: 250px;
+    border: 2px;
+    border-radius: 60px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    /* Set wrapper background color to white */
+}
+
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    border-radius: 50px;
+    /* Make button corners round */
+    border: 2px solid red;
+    /* Set border color to red */
+}
+
+#yes-btn {
+    background-color: red;
+    /* Set background color of 'Yes' button to red */
+    color: white;
+    /* Set text color of 'Yes' button to white */
+}
+
+#no-btn {
+    background-color: white;
+    /* Set background color of 'No' button to white */
+    color: black;
+    /* Set text color of 'No' button to black */
+}
+
+
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#date-text {
+    font-size: 50px;
+    font-family: 'Lobster', cursive;
+    text-align: center;
+    opacity: 0;
+    /* Initially hide the text */
+}
+
+/* Add your other CSS styles here */
