@@ -1,0 +1,261 @@
+/* Apply CSS Reset for better cross-browser consistency */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: linear-gradient(to top right, rgb(99, 6, 99),  rgb(236, 123, 48));
+}
+/* Wrapper */
+.wrapper {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Make the wrapper full height of the viewport */
+    overflow: hidden; /* Hide overflow content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-wrapper {
+    display: flex; /* Use flexbox layout */
+    justify-content: space-between; /* Align elements horizontally */
+    align-items: center; /* Center elements vertically */
+    flex-wrap: wrap; /* Allow elements to wrap to the next line if there's not enough space */
+    padding: 20px; /* Adjust padding as needed */
+}
+
+/* Background image */
+#bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This ensures the image covers the entire container */
+}
+
+/* Trade image */
+#trade {
+    position: absolute;
+    bottom: 10px; /* Adjust this value to your preference */
+    left: 50%;
+    transform: translateX(-50%);
+    
+    animation: fadein 2s forwards;
+    z-index: 2; /* Ensure trade image is above the background image */
+}
+
+@keyframes fadein {
+    0% {
+        max-width: 0%; /* Adjust this value as needed */
+    }
+    100% {
+        max-width: 100%; /* Adjust this value as needed */
+    }
+}
+
+/* Text on top left */
+#top_left {
+    position: absolute;
+    top: 15vh; /* Adjust top position relative to viewport height */
+    left: 15vw; /* Adjust left position relative to viewport width */
+    color: white; /* Set text color */
+    font-size: 2.5vw; /* Set font size relative to viewport width */
+    z-index: 1; /* Ensure text is above the background image */
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    opacity: 0; /* Initially hide the element */
+    animation: fadeinlefttoright 2s forwards;
+    animation-delay: 1s; /* Start the animation immediately */
+
+    @media only screen and (max-width: 768px) {
+        font-size: 4vw;
+    }
+}
+
+/* Text on top right */
+#top_right {
+    position: absolute;
+    top: 15vh; /* Adjust top position relative to viewport height */
+    right: 15vw; /* Adjust right position relative to viewport width */
+    color: white; /* Set text color */
+    font-size: 2.5vw; /* Set font size relative to viewport width */
+    z-index: 1; /* Ensure text is above the background image */
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    opacity: 0; /* Initially hide the element */
+    animation: fadeinrighttoleft 2s forwards;
+    animation-delay: 2s; /* Start the animation immediately */
+
+    @media only screen and (max-width: 768px) {
+        font-size: 4vw;
+    }
+}
+
+@keyframes fadeinlefttoright {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+@keyframes fadeinrighttoleft {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+/* Show top_left and top_right after the trade animation completes */
+#trade.animation-complete + #top_left,
+#trade.animation-complete + #top_right {
+    opacity: 1;
+}
+
+/* Styling for the restaurant name */
+.restaurant_name {
+    font-family: 'Lobster', cursive; /* Apply Lobster font */
+    font-size: 100px; /* Set font size to 50px */
+    text-align: center; /* Center text */
+    margin: 0; /* Remove default margin */
+    padding: 4%; /* Remove default padding */
+
+    @media only screen and (max-width: 768px) {
+        font-size: 20vw;
+    }
+}
+ 
+.red-word {
+    color: red; /* Set the color of the word "Red" to red */
+}
+
+#dining_Area {
+    width: calc(50% - 10px); /* Adjust width as needed */
+    max-width: 100%; /* Ensure image takes full width */
+}
+
+.advertisement {
+    width: calc(50% - 10px); /* Adjust width as needed */
+    max-width: 100%; /* Ensure text takes full width */
+    color: black; /* Set text color */
+    font-size: 20px; /* Set font size */
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    line-height: 1.5; /* Set line height */
+    margin-top: 1ppx; /* Add margin at the top */
+}
+
+@media only screen and (max-width: 768px) {
+    /* Adjust styles for smaller screens */
+    .content-wrapper {
+        flex-direction: column; /* Stack elements vertically on smaller screens */
+    }
+
+    #dining_Area,
+    .advertisement {
+        width: 100%; /* Set width to full width on smaller screens */
+        margin-bottom: 20px; /* Add margin between elements on smaller screens */
+    }
+
+    .advertisement {
+        font-size: 16px; /* Adjust font size for smaller screens */
+    }
+}
+
+.padding{
+    padding-bottom: 200px;
+
+    @media only screen and (max-width: 768px) {
+        padding-bottom: 160px;
+    }
+}
+
+.menuList {
+    font-family: 'Lobster', cursive; /* Apply Lobster font */
+    font-size: 100px; /* Set font size to 50px */
+    text-align: center; /* Center text */
+    margin: 0; /* Remove default margin */
+    padding: 4%; /* Remove default padding */
+
+    @media only screen and (max-width: 768px) {
+        font-size: 30vw;
+    }
+}
+
+.card-container {
+    display: flex; /* Use flexbox layout */
+    justify-content: space-around; /* Align cards evenly along the main axis */
+    flex-wrap: wrap; /* Allow cards to wrap to the next line if there's not enough space */
+}
+
+.card {
+    width: calc(33.33% - 20px); /* Adjust the width as needed */
+    margin: 0 10px; /* Adjust the margin as needed */
+    background-color: rgba(255, 221, 208, 0.116); /* Semi-transparent white */
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(255, 210, 210, 0.342); /* Red shadow */
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.card .title{
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.card ul {
+    margin-top: 10px; /* Add margin to separate the list from the paragraph */
+    padding-left: 20px; /* Add padding to align the bullet points with the text */
+}
+
+.card ul p {
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+}
+
+/* Default styles for card images */
+.card img {
+    width: 100%;
+    height: 300px; /* Allow images to adjust their height according to aspect ratio */
+    object-fit: cover; /* Maintain aspect ratio and cover the entire space */
+    border-radius: 5px;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 767px) {
+    .card-container {
+        height: 100%;
+        flex-direction: column; /* Change to vertical alignment */
+    }
+
+    .card {
+        width: calc(100% - 20px); /* Adjust the width as needed */
+        margin: 10px; /* Adjust the margin as needed */
+    }
+}
+
+/* Media query for larger screens (e.g., desktop browsers) */
+@media screen and (min-width: 768px) {
+    .card img {
+        height: 300px; /* Set a larger height for card images on larger screens */
+    }
+}
+
+footer {
+    height: 250px;
+    background-color: rgb(39, 36, 36);
+    padding-top: 10px; /* Adjust the value as needed */
+}
