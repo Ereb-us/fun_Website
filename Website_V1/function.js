@@ -19,8 +19,22 @@ window.onload = function() {
         clickCount++;
 
         // Check if click count reaches 20
-        if (clickCount === 20) {
-            alert('Please just say yes');
+        if (clickCount === 10) {
+            alert('Please just click yes');
+        }
+        else if(clickCount === 15) {
+            alert('You wont regret it if you click yes');
+        }
+        else if(clickCount === 20) {
+            alert('Its already in color red why wont you click it');
+            // Reset click count after displaying the message
+        }
+        else if(clickCount === 30) {
+            alert('you manage to click the no 30 times yet you didnt click the YES atleast once');
+            // Reset click count after displaying the message
+        }
+        else if(clickCount === 35) {
+            alert('Cmon its not that hard to click YES');
             // Reset click count after displaying the message
             clickCount = 0;
         }
