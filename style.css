@@ -13,16 +13,13 @@ body {
 #heart {
     position: absolute;
     width: 50px;
-    /* Set a fixed width */
     height: 50px;
-    /* Set a fixed height */
 }
 
 #header-image {
-    width: 60%; /* Adjust width as needed */
-    height: auto; /* Maintain aspect ratio */
+    width: 250px;
+    height: 250px;
     margin-bottom: 20px;
-    /* Adjust spacing as needed */
     opacity: 0;
     animation: fadeInFromLeft 1.5s forwards;
 }
@@ -40,42 +37,38 @@ body {
 }
 
 #wrapper {
-    display: flex; /* Use flexbox */
-    flex-direction: column; /* Stack buttons vertically */
-    justify-content: center; /* Center the buttons horizontally */
-    align-items: center; /* Center the buttons vertically */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 80%;
     max-width: 450px;
-    height: auto; /* Adjust height automatically */
-    border: 2px;
+    height: 30%;
     border-radius: 60px;
     position: relative;
-    background-color: white; /* Set wrapper background color to white */
+    background-color: white;
+
+    @media only screen and (max-width: 768px) {
+        height: 30%;
+    }
 }
 
 button {
     padding: 10px 20px;
-    margin: 10px 0; /* Adjust margin between buttons */
+    margin: 10px 5px;
     font-size: 16px;
     border-radius: 50px;
-    /* Make button corners round */
     border: 2px solid red;
-    /* Set border color to red */
-    display: inline-block; /* Set display to inline-block */
 }
 
 #yes-btn {
     background-color: red;
-    /* Set background color of 'Yes' button to red */
     color: white;
-    /* Set text color of 'Yes' button to white */
 }
 
 #no-btn {
     background-color: white;
-    /* Set background color of 'No' button to white */
     color: black;
-    /* Set text color of 'No' button to black */
 }
 
 @keyframes fadeInText {
@@ -91,15 +84,14 @@ button {
 }
 
 #date-text {
-    font-size: 5vw; /* Adjust font size relative to viewport width */
+    font-size: 24px;
     font-family: 'Lobster', cursive;
     text-align: center;
     opacity: 0;
-    /* Initially hide the text */
 }
 
 #happy-text {
-    font-size: 4vw; /* Adjust font size relative to viewport width */
+    font-size: 20px;
     font-family: 'Lobster', cursive;
     text-align: center;
 }
@@ -123,22 +115,22 @@ button {
 
 .heart {
     position: absolute;
-    width: 5vw; /* Adjust size relative to viewport width */
-    height: auto; /* Maintain aspect ratio */
-    animation: fadeInAndOut 3s linear infinite; /* Adjust duration and timing */
+    width: 50px;
+    height: 50px;
+    animation: fadeInAndOut 3s linear infinite;
 }
 
-/* Media query for iPhone */
-@media only screen and (max-device-width: 480px) {
+/* Media query for smaller screens */
+@media only screen and (max-width: 768px) {
     #header-image {
-        width: 80%; /* Adjust width for smaller screens */
+        width: 80%;
     }
 
     #date-text {
-        font-size: 8vw; /* Adjust font size for smaller screens */
+        font-size: 18px;
     }
 
     #happy-text {
-        font-size: 6vw; /* Adjust font size for smaller screens */
+        font-size: 16px;
     }
 }
